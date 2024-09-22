@@ -1,12 +1,95 @@
 import random
+stages = ['''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ / \  |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ /    |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|   |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+  |   |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+      |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+      |
+      |
+      |
+      |
+=========
+''']
 
-import hangman_words
-import hangman_art
+logo = ''' 
+ _                                             
+| |                                            
+| |__   __ _ _ __   __ _ _ __ ___   __ _ _ __  
+| '_ \ / _` | '_ \ / _` | '_ ` _ \ / _` | '_ \ 
+| | | | (_| | | | | (_| | | | | | | (_| | | | |
+|_| |_|\__,_|_| |_|\__, |_| |_| |_|\__,_|_| |_|
+                    __/ |                      
+                   |___/    '''
+
+
+word_list = [
+    'abruptly',
+    'absurd',
+    'abyss',
+    'affix',
+    'askew',
+    'avenue',
+    'awkward',
+    'axiom',
+    'azure',
+    'bagpipes',
+    'bandwagon',
+    'banjo',
+    'bayou',
+    'beekeeper',
+    'bikini']
+
+
 
 lives = 6
 
-print(hangman_art.logo)
-word=hangman_words.word_list
+print(logo)
+word=word_list
 
 chosen_word = random.choice(word)
 print(chosen_word)
@@ -56,5 +139,5 @@ while not game_over:
         game_over = True
         print("****************************YOU WIN****************************")
 
-    print(hangman_art.stages[lives])
+    print(stages[lives])
 
